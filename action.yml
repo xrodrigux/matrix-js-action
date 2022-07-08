@@ -16,4 +16,4 @@ outputs:
     description: "The list of files to be created"
 runs:
   using: "node16"
-  main: "index.js"
+  main: "dist/index.js"
