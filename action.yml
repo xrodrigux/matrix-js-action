@@ -1,0 +1,19 @@
+name: "Matrix files"
+description: "Generate a matrix for several files to upload to readme.io"
+inputs:
+  readme-id-file:
+    description: "Path to readme.io json with file names and ids"
+    required: true
+    default: "readme.io.ids.json"
+  files-to-process:
+    description: "Comma separated list of files to process"
+    required: true
+    default: ""
+outputs:
+  update-matrix:
+    description: "The matrix files to update"
+  create-list:
+    description: "The list of files to be created"
+runs:
+  using: "node16"
+  main: "index.js"
