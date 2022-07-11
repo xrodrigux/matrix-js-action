@@ -17,7 +17,7 @@ const main = async () => {
             ref: branchName
         });
         console.log('DATA', data);
-        let readmeFiles = JSON.parse(data);
+        let readmeFiles = JSON.parse(data); //need  to get files 
         let searchArray = filesToProcess.split(",");
         let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
         console.log(toUpdate);
