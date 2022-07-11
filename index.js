@@ -6,7 +6,7 @@ const main = async () => {
         const readmeIDFiles = core.getInput('readme-id-file', { required: true });
         const filterExpression = core.getInput('files-filer-expression', { required: true });
         const branchName = core.getInput('branch-name', { required: true });
-        console.log('BRANCHNAME', branchName);
+        console.log('BRANCHNAME: ', branchName);
         console.log('FILTER_EXPRESSION', filterExpression);
         const octokit = new github.getOctokit(core.getInput('github-token', { required: true }));
         const data = await octokit.rest.repos.getContent({
