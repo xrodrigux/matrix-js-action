@@ -9,7 +9,7 @@ const main = async () => {
         let searchArray = filesToProcess.split(",");
         let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
         console.log(toUpdate);
-
+        core.setOutput('update-matrix', JSON.stringify(toUpdate));
     } catch (error) {
         core.setFailed(error.message);
     }
