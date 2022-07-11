@@ -3,9 +3,9 @@ const github = require('@actions/github');
 
 const main = async () => {
     try {
-        console.log('DIRNAME:', __dirname);
         const readmeIDFiles = core.getInput('readme-id-file', { required: true });
         const filesToProcess = core.getInput('files-to-process', { required: true });
+        console.log('DIRNAME: ', __dirname);
         console.log(readmeIDFiles, filesToProcess);
         let readmeFiles = require(readmeIDFiles);
         let searchArray = filesToProcess.split(",");
@@ -13,7 +13,6 @@ const main = async () => {
         console.log(toUpdate);
         core.setOutput('update-matrix', JSON.stringify(toUpdate));
     } catch (error) {
-        core.debug(__dirname);
         console.log(error);
         core.setFailed(error.message);
     }
