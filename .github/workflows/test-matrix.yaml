@@ -13,6 +13,6 @@ jobs:
         uses: xrodrigux/matrix-js-action@main
         with:
           readme-id-file: "spec/readme.io.files.json"
-          files-filer-expression: "^spec/API/.*\.yaml$"
+          files-filer-expression: '^spec/API/.*\.yaml$'
           branch-name: ${{ github.head_ref || github.ref_name }}
           github-token: ${{ secrets.GITHUB_TOKEN }}

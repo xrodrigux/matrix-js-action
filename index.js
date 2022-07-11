@@ -9,13 +9,14 @@ const main = async () => {
         console.log('BRANCHNAME', branchName);
         console.log('FILTER_EXPRESSION', filterExpression);
         const octokit = new github.getOctokit(core.getInput('github-token', { required: true }));
-        const { data } = await octokit.rest.repos.getContent({
+        const data = await octokit.rest.repos.getContent({
             mediaType: { format: "raw" },
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
             path: `${readmeIDFiles}`,
             ref: branchName
         });
+        console.log('DATA', data);
         let readmeFiles = JSON.parse(data);
         let searchArray = filesToProcess.split(",");
         let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
