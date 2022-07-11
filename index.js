@@ -15,7 +15,7 @@ const main = async () => {
             path: `${readmeIDFiles}`,
         });
         console.log("repo owner: ", github.context.repo.owner);
-        console.log("repo name: ", github.context.repo.name);
+        console.log("repo: ", github.context.repo);
         console.log("pdata: ", data);
         console.log('DIRNAME: ', __dirname);
         console.log(readmeIDFiles, filesToProcess);
