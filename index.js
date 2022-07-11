@@ -17,11 +17,11 @@ const main = async () => {
             ref: branchName
         });
         console.log('DATA', data);
-        let readmeFiles = JSON.parse(data); //need  to get files 
-        let searchArray = filesToProcess.split(",");
-        let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
-        console.log(toUpdate);
-        core.setOutput('update-matrix', JSON.stringify(toUpdate));
+        // let readmeFiles = JSON.parse(data); //need  to get files 
+        // let searchArray = filesToProcess.split(",");
+        // // let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
+        // console.log(toUpdate);
+        core.setOutput('update-matrix', JSON.stringify({}));
     } catch (error) {
         console.log(error);
         core.setFailed(error.message);

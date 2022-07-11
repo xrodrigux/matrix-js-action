@@ -7,7 +7,7 @@ on:
 jobs:
   matrix-js-step:
     runs-on: ubuntu-latest
-    name: Check the info and do the matrix job
+    name: Check the info filter files and do the matrix job
     steps:
       - name: ToMatrix
         uses: xrodrigux/matrix-js-action@main
