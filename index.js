@@ -12,6 +12,8 @@ const main = async () => {
         console.log(toUpdate);
         core.setOutput('update-matrix', JSON.stringify(toUpdate));
     } catch (error) {
+        console.log(error);
+        core.output('error', error);
         core.setFailed(error.message);
     }
 };
