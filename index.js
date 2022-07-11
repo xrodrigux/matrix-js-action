@@ -18,6 +18,7 @@ const main = async () => {
         let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
         console.log(toUpdate);
         core.setOutput('update-matrix', JSON.stringify(toUpdate));
+        core.setOutput('has-updates-to-process', (toUpdate.length > 0 ? 1 : 0));
     } catch (error) {
         console.log(error);
         core.setFailed(error.message);
