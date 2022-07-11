@@ -9023,7 +9023,7 @@ const main = async () => {
         let readmeFiles = JSON.parse(data);
         let searchArray = filesToProcess.split(",");
         let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
-        console.log(toUpdate);
+        console.log('update-matrix', JSON.stringify(toUpdate));
         core.setOutput('update-matrix', JSON.stringify(toUpdate));
         core.setOutput('has-updates-to-process', (toUpdate.length > 0 ? 1 : 0));
     } catch (error) {

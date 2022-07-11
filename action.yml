@@ -15,8 +15,6 @@ inputs:
 outputs:
   update-matrix:
     description: "The matrix files to update"
-  create-list:
-    description: "The list of files to be created"
   has-updates-to-process:
     description: "Flag to signal if the result has files to process"
 runs:
