@@ -5,16 +5,12 @@ inputs:
     description: "Path to readme.io json with file names and ids"
     required: true
     default: "readme.io.ids.json"
-  files-filer-expression:
-    description: "Filter expression to see filter files changed"
-    required: true
-    default: ""
-  branch-name:
-    description: "The name of the branch to get the files"
+  files-to-process:
+    description: "Comma separated list of files to process"
     required: true
     default: ""
   github-token:
-    description: "The github token to access files in repo see secrets.GITHUB_TOKEN "
+    description: "The github token to access files in repo"
     required: true
 outputs:
   update-matrix:
