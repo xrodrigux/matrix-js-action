@@ -11,7 +11,7 @@ const main = async () => {
                 format: "raw",
             },
             owner: github.context.repo.owner,
-            repo: github.context.repo.name,
+            repo: github.context.repo.repo,
             path: `${readmeIDFiles}`,
         });
         console.log("repo owner: ", github.context.repo.owner);
