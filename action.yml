@@ -9,6 +9,9 @@ inputs:
     description: "Comma separated list of files to process"
     required: true
     default: ""
+  github-token:
+    description: "The github token to access files in repo"
+    required: true
 outputs:
   update-matrix:
     description: "The matrix files to update"
