@@ -9009,7 +9009,15 @@ const main = async () => {
     try {
         const readmeIDFiles = core.getInput('readme-id-file', { required: true });
         const filesToProcess = core.getInput('files-to-process', { required: true });
-        console.log('CONTEXT: ', github.context);
+        const octokit = new github.getOctokit(core.getInput('github-token', { required: true }));
+        const { data } = octokit.rest.repos.getContent.getContent({
+            mediaType: {
+                format: "raw",
+            },
+            repo: "openapi-test",
+            path: `${readmeIDFiles}`,
+        });
+        console.log("pdata: %s", JSON.parse(data));
         console.log('DIRNAME: ', __dirname);
         console.log(readmeIDFiles, filesToProcess);
         let readmeFiles = require(readmeIDFiles);
