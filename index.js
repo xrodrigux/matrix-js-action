@@ -6,7 +6,7 @@ const main = async () => {
         const readmeIDFiles = core.getInput('readme-id-file', { required: true });
         const filesToProcess = core.getInput('files-to-process', { required: true });
         const octokit = new github.getOctokit(core.getInput('github-token', { required: true }));
-        const { data } = octokit.rest.repos.getContent({
+        const { data } = octokit.rest.repos.getContents({
             mediaType: {
                 format: "raw",
             },
