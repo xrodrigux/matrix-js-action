@@ -14,4 +14,4 @@ jobs:
         with:
           readme-id-file: "spec/readme.io.files.json"
           files-to-process: "portal-reg,portal-oauth2"
-          github-token: ${{ secret.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
