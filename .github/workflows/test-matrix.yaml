@@ -1,0 +1,16 @@
+name: Test matrix request
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  matrix-js-step:
+    runs-on: ubuntu-latest
+    name: Check the info and do the matrix job
+    steps:
+      - name: ToMatrix
+        uses: xrodrigux/matrix-js-action@main
+        with:
+          readme-id-file: "spec/readme.io.files.json"
+          files-to-process: "portal-reg,portal-oauth2"
