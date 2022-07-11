@@ -9009,6 +9009,7 @@ const main = async () => {
     try {
         const readmeIDFiles = core.getInput('readme-id-file', { required: true });
         const filesToProcess = core.getInput('files-to-process', { required: true });
+        console.log('CONTEXT: ', github.context);
         console.log('DIRNAME: ', __dirname);
         console.log(readmeIDFiles, filesToProcess);
         let readmeFiles = require(readmeIDFiles);
