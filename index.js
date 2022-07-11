@@ -6,13 +6,14 @@ const main = async () => {
         const readmeIDFiles = core.getInput('readme-id-file', { required: true });
         const filesToProcess = core.getInput('files-to-process', { required: true });
         const octokit = new github.getOctokit(core.getInput('github-token', { required: true }));
-        const { readmeIdsContent } = await octokit.rest.repos.getContent({
+        // name is data because it's taken from response body 
+        const { data } = await octokit.rest.repos.getContent({
             mediaType: { format: "raw" },
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
             path: `${readmeIDFiles}`
         });
-        let readmeFiles = JSON.parse(readmeIdsContent); //need  to get files 
+        let readmeFiles = JSON.parse(data);
         let searchArray = filesToProcess.split(",");
         let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
         console.log(toUpdate);
