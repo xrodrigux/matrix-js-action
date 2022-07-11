@@ -14,7 +14,7 @@ inputs:
     required: true
     default: ""
   github-token:
-    description: "The github token to access files in repo ${{ secrets.GITHUB_TOKEN }}"
+    description: "The github token to access files in repo see secrets.GITHUB_TOKEN "
     required: true
 outputs:
   update-matrix:
