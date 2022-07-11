@@ -5,6 +5,7 @@ const main = async () => {
     try {
         const readmeIDFiles = core.getInput('readme-id-file', { required: true });
         const filesToProcess = core.getInput('files-to-process', { required: true });
+        console.log(readmeIDFiles, filesToProcess);
         let readmeFiles = require(readmeIDFiles);
         let searchArray = filesToProcess.split(",");
         let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
