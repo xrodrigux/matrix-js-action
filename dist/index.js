@@ -9016,12 +9016,9 @@ const main = async () => {
             repo: github.context.repo.repo,
             path: `${readmeIDFiles}`,
         });
-        console.log("pdata: ", data);
-        console.log('DIRNAME: ', __dirname);
-        console.log(readmeIDFiles, filesToProcess);
-        let readmeFiles = require(readmeIDFiles);
+        // let readmeFiles = require(readmeIDFiles);
         let searchArray = filesToProcess.split(",");
-        let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
+        let toUpdate = data.filter(f => searchArray.includes(f.file));
         console.log(toUpdate);
         core.setOutput('update-matrix', JSON.stringify(toUpdate));
     } catch (error) {
