@@ -9007,7 +9007,7 @@ const github = __nccwpck_require__(3134);
 
 const main = async () => {
     try {
-        core.debug(__dirname);
+        console.log('DIRNAME:', __dirname);
         const readmeIDFiles = core.getInput('readme-id-file', { required: true });
         const filesToProcess = core.getInput('files-to-process', { required: true });
         console.log(readmeIDFiles, filesToProcess);
