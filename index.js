@@ -13,7 +13,7 @@ const main = async () => {
             repo: "openapi-test",
             path: `${readmeIDFiles}`,
         });
-        console.log("pdata: %s", JSON.parse(data));
+        console.log("pdata: ", data);
         console.log('DIRNAME: ', __dirname);
         console.log(readmeIDFiles, filesToProcess);
         let readmeFiles = require(readmeIDFiles);
