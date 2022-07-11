@@ -9011,7 +9011,7 @@ const main = async () => {
         const filesToProcess = core.getInput('files-to-process', { required: true });
         const octokit = new github.getOctokit(core.getInput('github-token', { required: true }));
         const { data } = await octokit.rest.repos.getContent({
-            mediaType: { type: "raw" },
+            mediaType: { format: "raw" },
             owner: github.context.repo.owner,
             repo: github.context.repo.repo,
             path: `${readmeIDFiles}`,
