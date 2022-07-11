@@ -9015,7 +9015,7 @@ const main = async () => {
                 format: "raw",
             },
             owner: github.context.repo.owner,
-            repo: "openapi-test",
+            repo: github.context.repo.name,
             path: `${readmeIDFiles}`,
         });
         console.log("repo owner: ", github.context.repo.owner);
