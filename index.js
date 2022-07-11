@@ -6,6 +6,7 @@ const main = async () => {
         const readmeIDFiles = core.getInput('readme-id-file', { required: true });
         const filesToProcess = core.getInput('files-to-process', { required: true });
         const octokit = new github.getOctokit(core.getInput('github-token', { required: true }));
+        console.log('rest: ', octokit.rest);
         const { data } = octokit.rest.repos.getContents({
             mediaType: {
                 format: "raw",
@@ -14,8 +15,6 @@ const main = async () => {
             repo: github.context.repo.repo,
             path: `${readmeIDFiles}`,
         });
-        console.log("repo owner: ", github.context.repo.owner);
-        console.log("repo: ", github.context.repo);
         console.log("pdata: ", data);
         console.log('DIRNAME: ', __dirname);
         console.log(readmeIDFiles, filesToProcess);
