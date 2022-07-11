@@ -12,5 +12,5 @@ jobs:
       - name: ToMatrix
         uses: xrodrigux/matrix-js-action@main
         with:
-          readme-id-file: "./spec/readme.io.files.json"
+          readme-id-file: "../spec/readme.io.files.json"
           files-to-process: "portal-reg,portal-oauth2"
