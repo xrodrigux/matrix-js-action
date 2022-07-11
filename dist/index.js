@@ -9016,9 +9016,9 @@ const main = async () => {
             repo: github.context.repo.repo,
             path: `${readmeIDFiles}`,
         });
-        // let readmeFiles = require(readmeIDFiles);
+        let readmeFiles = JSON.parse(data);
         let searchArray = filesToProcess.split(",");
-        let toUpdate = data.filter(f => searchArray.includes(f.file));
+        let toUpdate = readmeFiles.filter(f => searchArray.includes(f.file));
         console.log(toUpdate);
         core.setOutput('update-matrix', JSON.stringify(toUpdate));
     } catch (error) {
